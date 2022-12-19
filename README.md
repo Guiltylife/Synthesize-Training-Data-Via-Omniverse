@@ -39,28 +39,28 @@ To test the synthetic training data, you could use the YOLOv5 neural network wit
 
 ![scene1](images/scene1.jpg)
 
-![scene2](https://github.com/Guiltylife/SynthesizeTrainingDataViaOmniverse/tree/main/images/scene2.jpg)
+![scene2](images/scene2.jpg)
 
 ### Training data Visualization
 
 #### Bounding Box
 
-![bbox](https://github.com/Guiltylife/SynthesizeTrainingDataViaOmniverse/tree/main/images/bbox.jpg)
+![bbox](images/bbox.jpg)
 
 #### Depth Graph
 
-![depth](https://github.com/Guiltylife/SynthesizeTrainingDataViaOmniverse/tree/main/images/depth.jpg)
+![depth](images/depth.jpg)
 
 #### Semantic Segmentation
 
-![segmentation](https://github.com/Guiltylife/SynthesizeTrainingDataViaOmniverse/tree/main/images/segmentation.jpg)
+![segmentation](images/segmentation.jpg)
 
 #### Visualization in Voxel51
 
-![voxel51](https://github.com/Guiltylife/SynthesizeTrainingDataViaOmniverse/tree/main/images/voxel51.jpg)
+![voxel51](images/voxel51.jpg)
 
 ### Result in YOLOv5
 
 Based on the training data synthesized by the system, this project trained a YOLOv5 neural network to detect bbox. The dataset contains 8100 train images, 900 validation images, and 1000 test images. The neural network is trained for 200 epochs and the training takes about 14 hours. The pretrained model used in this task is YOLOv5m. The mAP_0.5 is 0.9722 and the mAP_0.5_95 is 0.8942.
 
-![yolov5 result](https://github.com/Guiltylife/SynthesizeTrainingDataViaOmniverse/tree/main/images/val_batch0_pred.jpg)
+![yolov5 result](images/val_batch0_pred.jpg)
