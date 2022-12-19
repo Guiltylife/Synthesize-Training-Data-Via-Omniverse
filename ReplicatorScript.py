@@ -20,11 +20,16 @@ with rep.new_layer():
     SCENE_HAY1 = 'omniverse://localhost/Users/admin/USD/scene/Hay/MyRanchOutside_Hay1.usd'
     SCENE_HAY2 = 'omniverse://localhost/Users/admin/USD/scene/Hay/MyRanchOutside_Hay2.usd'
     # Animals
-    CHICKEN = 'omniverse://localhost/Users/admin/USD/animals/Chicken.usd'
-    COW = 'omniverse://localhost/Users/admin/USD/animals/Cow.usd'
-    GOAT = 'omniverse://localhost/Users/admin/USD/animals/Goat.usd'
-    PIG = 'omniverse://localhost/Users/admin/USD/animals/Pig.usd'
-    SHEEP = 'omniverse://localhost/Users/admin/USD/animals/Sheep.usd'
+    CHICKEN_WALK = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Chicken_Walk.usd'
+    CHICKEN_RUN = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Chicken_Run.usd'
+    COW_WALK = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Cow_Walk.usd'
+    COW_RUN = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Cow_Run.usd'
+    GOAT_WALK = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Goat_Walk.usd'
+    GOAT_RUN = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Goat_Run.usd'
+    PIG_WALK = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Pig_Walk.usd'
+    PIG_RUN = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Pig_Run.usd'
+    SHEEP_WALK = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Sheep_Walk.usd'
+    SHEEP_RUN = 'omniverse://localhost/Users/admin/USD/animals/ANIM_Sheep_Run.usd'
     # Vegetations
     TREE1 = 'omniverse://localhost/Users/admin/USD/vegetation/Collected_American_Beech/American_Beech.usd'
     TREE2 = 'omniverse://localhost/Users/admin/USD/vegetation/Collected_Common_Apple/Common_Apple.usd'
@@ -45,15 +50,15 @@ with rep.new_layer():
     def animal():
         rand_num = random.randint(0,4)
         if rand_num == 0:
-            animal = rep.create.from_usd(CHICKEN, semantics=[('class', 'chicken')])
+            animal = rep.create.from_usd([CHICKEN_WALK, CHICKEN_RUN][random.randint(0,1)], semantics=[('class', 'chicken')])
         elif rand_num == 1:
-            animal = rep.create.from_usd(COW, semantics=[('class', 'cow')])
+            animal = rep.create.from_usd([COW_WALK, COW_RUN][random.randint(0,1)], semantics=[('class', 'cow')])
         elif rand_num == 2:
-            animal = rep.create.from_usd(GOAT, semantics=[('class', 'goat')])
+            animal = rep.create.from_usd([GOAT_WALK, GOAT_RUN][random.randint(0,1)], semantics=[('class', 'goat')])
         elif rand_num == 3:
-            animal = rep.create.from_usd(PIG, semantics=[('class', 'pig')])
+            animal = rep.create.from_usd([PIG_WALK, PIG_RUN][random.randint(0,1)], semantics=[('class', 'pig')])
         elif rand_num == 4:
-            animal = rep.create.from_usd(SHEEP, semantics=[('class', 'sheep')])
+            animal = rep.create.from_usd([SHEEP_WALK, SHEEP_RUN][random.randint(0,1)], semantics=[('class', 'sheep')])
 
         with animal:
             rep.modify.pose(
@@ -112,8 +117,8 @@ with rep.new_layer():
 
     # Setup camera and attach it to render product
     camera = rep.create.camera(
-        focus_distance=1000,
-        f_stop=1.8
+        focus_distance=2500,
+        f_stop=0.5
     )
     render_product = rep.create.render_product(camera, resolution=(1024, 1024))
 
@@ -128,7 +133,7 @@ with rep.new_layer():
     )
     writer.attach([render_product])
 
-    with rep.trigger.on_frame(interval=1, num_frames=10):
+    with rep.trigger.on_time(interval=0.5, num=10):
         for i in range(2):
             rep.randomizer.tree()
         for i in range(16):
