@@ -37,7 +37,7 @@ To test the synthetic training data, you could use the YOLOv5 neural network wit
 
 ### Built Scene in Unreal
 
-![scene1](https://github.com/Guiltylife/SynthesizeTrainingDataViaOmniverse/tree/main/images/scene1.jpg)
+![scene1](images/scene1.jpg)
 
 ![scene2](https://github.com/Guiltylife/SynthesizeTrainingDataViaOmniverse/tree/main/images/scene2.jpg)
 
