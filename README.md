@@ -32,3 +32,35 @@ Forth, you could run the python script ConvertToYOLO.py in project_folder to con
 Fifth, you could run the python script Voxel51Visualization.py to visualize the training data.
 
 To test the synthetic training data, you could use the YOLOv5 neural network with the omniverse.yaml file. The specific instruction for YOLOv5 could be found in its GitHub project.
+
+## Some Result
+
+### Built Scene in Unreal
+
+![scene1](.\images\scene1.jpg)
+
+![scene2](.\images\scene2.jpg)
+
+### Training data Visualization
+
+#### Bounding Box
+
+![bbox](.\images\bbox.jpg)
+
+#### Depth Graph
+
+![depth](.\images\depth.jpg)
+
+#### Semantic Segmentation
+
+![segmentation](.\images\segmentation.jpg)
+
+#### Visualization in Voxel51
+
+![voxel51](.\images\voxel51.jpg)
+
+### Result in YOLOv5
+
+Based on the training data synthesized by the system, this project trained a YOLOv5 neural network to detect bbox. The dataset contains 8100 train images, 900 validation images, and 1000 test images. The neural network is trained for 200 epochs and the training takes about 14 hours. The pretrained model used in this task is YOLOv5m. The mAP_0.5 is 0.9722 and the mAP_0.5_95 is 0.8942.
+
+![yolov5 result](.\images\val_batch0_pred.jpg)
