@@ -120,8 +120,7 @@ with rep.new_layer():
     # Initialize and attach writer
     writer = rep.WriterRegistry.get("BasicWriter")
     writer.initialize(
-        # output_dir="E:/Replicator/datasets/ReplicatorData",
-        output_dir="E:/Replicator/test",
+        output_dir="E:/Replicator/datasets/ReplicatorData",
         rgb=True,
         bounding_box_2d_tight=True,
         semantic_segmentation=True,
