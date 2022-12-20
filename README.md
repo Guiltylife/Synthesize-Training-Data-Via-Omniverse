@@ -3,7 +3,7 @@ This is a project to synthesize training data for livestock identification via O
 
 ## How to use
 
-First, you need to import the USD files from [google drive](https://drive.google.com/drive/folders/1un_WZ_NSlaY59in0XJWp8JPsAfFA22UH?usp=share_link) to your omniverse server. To be consistent with the ReplicatorScript.py, you should import them under `omniverse://localhost/Users/admin/` path.
+First, you need to import the USD files from [google drive](https://drive.google.com/drive/folders/1TqAiXHGsPc-WnUMMXVCzaXpLk0p_mfiZ?usp=share_link) to your omniverse server. To be consistent with the ReplicatorScript.py, you should import them under `omniverse://localhost/Users/admin/` path.
 
 Second, you need to run the python script ReplicatorScript.py in Omniverse Replicator and you will get your synthetic training data in `E:/Replicator/datasets/ReplicatorData`. If you want to change the output path, you need to change the line 123 in ReplicatorScript.py to the path you want.
 
